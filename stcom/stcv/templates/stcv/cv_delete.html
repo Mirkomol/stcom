@@ -1,0 +1,14 @@
+{% extends 'stmain/base.html' %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+<form action="" method = "POST">
+    {% csrf_token %}
+    <h2>Are u sure u want to delete {{ profile.name}}</h2>
+    <button class="btn btn-danger" type="submit">Confirm</button>
+</form>
+
+ <a href="{% url 'stcv' %}"><button class="btn btn-success" >Back</button></a>
+
+{% endblock %}

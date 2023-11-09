@@ -1,0 +1,39 @@
+{% extends 'stmain/blogbase.html' %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+        <p class="card-text ">{{ object.content | safe }}</p>
+      </div>
+    </div>
+
+
+
+<style>
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+
+</style>
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right ">
+<div class="card my-4">
+        <h5 class="card-header">About Us</h5>
+    <div class="card-body">
+        <p class="card-text"> This awesome platform to make student life easy, study hard but not struggle!....</p>
+        <a href="https://github.com/Mirkomol"
+           class="btn btn-success">Know more!</a>
+         <a href="{% url 'stmain:delete_blog' post.id %}"> <button type="reset" class="btn btn-danger">Delete Post</button></a>
+    </div>
+</div>
+</div>
+
+
+  </div>
+</div>
+
+{% endblock content %}

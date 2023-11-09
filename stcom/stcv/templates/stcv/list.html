@@ -1,0 +1,27 @@
+{% extends 'stmain/base.html' %}
+
+
+{% block body %}
+  <div class="container">
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h2>CV Database Profile List</h2>
+            </div>
+
+        </div>
+
+        {% for profile in profile %}
+        <div class="row">
+            <div class="col-md-6">
+                {{profile.name}}
+            </div>
+            <div class="col-md-6">
+                   <a href="{% url 'cv' id=profile.id %}" class="btn btn-warning">Download CV</a>
+                    <a href="{% url 'delete_cv' profile.id %}" class="btn btn-danger">Delete CV</a>
+                </div>
+        </div>
+    <hr>
+        {% endfor %}
+    </div>
+
+{% endblock %}

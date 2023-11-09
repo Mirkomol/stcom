@@ -1,0 +1,78 @@
+{% extends 'stmain/base.html' %}
+
+
+
+{% block body %}
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="container">
+
+            <div class="col-md-12">
+                <h2>CV Generator Page</h2>
+            </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                <form method="POST">
+                    {% csrf_token %}
+              <div class="form-group">
+                <label for="">Name</label>
+                <input  name="name" type="text" class="form-control" id="name" aria-describedby="Name" >
+              </div>
+
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" name="email"  class="form-control" id="name" aria-describedby="email" >
+                </div>
+
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" name="phone"  class="form-control" id="phone" aria-describedby="phone" >
+              </div>
+
+                 <div class="form-group">
+                    <label for="">Summary</label>
+                     <textarea class="form-control" name="summary" id="" cols="30" rows="10"></textarea>
+                 </div>
+
+
+                <div class="form-group">
+                <label for="">Degree</label>
+                <input  name="degree" type="text" class="form-control" id="degree" aria-describedby="Name" >
+              </div>
+
+                <div class="form-group">
+                    <label for="">School</label>
+                    <input type="text" name="school"  class="form-control" id="school" aria-describedby="school" >
+                </div>
+
+                <div class="form-group">
+                    <label for="">University</label>
+                    <input type="text" name="university"  class="form-control"  id="university" aria-describedby="university" >
+              </div>
+
+                    <div class="form-group">
+                    <label for="">Work_experience</label>
+                     <textarea class="form-control" name="work_experience" id="work_experience" cols="30" rows="10"></textarea>
+                 </div>
+
+
+                    <div class="form-group">
+                    <label for="">Skills</label>
+                     <textarea class="form-control" name="skills" id="skills" cols="30" rows="10"></textarea>
+                 </div>
+
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <a href="{% url 'list' %}"><button class="btn btn-success" style="font-size:15px">List of Cv <i class="fa fa-id-card-o" aria-hidden="true"></i></button></a>
+
+            </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

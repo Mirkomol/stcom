@@ -1,0 +1,30 @@
+{% extends 'stmain/base.html' %}
+{% block body %}
+
+
+     <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card" >
+                    <div class="card-header text-white bg-info">
+                        <div class="card-title">
+                           Publish Post
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                            <form action="", method="POST">
+                            {% csrf_token %}
+                                    <div class="form-group">
+                                    {{ form }}
+                                <button class="btn-info" type="submit" >Publish</button>
+                                    </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
